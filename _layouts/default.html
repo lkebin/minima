@@ -14,7 +14,16 @@
     </main>
 
     {%- include footer.html -%}
-
+    <script type="text/javascript">
+      (function(){
+        setTimeout(function(){
+          var blink = document.createElement('span');
+          blink.innerText = '_';
+          var siteTitle = document.querySelector('.site-title');
+          siteTitle.appendChild(blink);
+        }, 1000);
+      })();
+    </script>
   </body>
 
 </html>
