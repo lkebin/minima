@@ -29,7 +29,16 @@
         }, 1000);
         
         // Initial mermaid
-        mermaid.init({startOnLoad:true}, "pre code.language-mermaid");
+        mermaid.init({startOnLoad:true, callback: function(){
+          // Change <pre> and <code> block style
+          var codeBlock = document.querySelector('code.language-mermaid');
+          var preBlock = codeBlock.parentNode;
+          
+          codeBlock.style.backgroundColor = 'initial';
+          preBlock.style.border = 'none';
+          preBlock.style.textAlign = 'center';
+          preBlock.style.backgroundColor = 'initial';
+        }}, "pre code.language-mermaid");
       })();
     </script>
   </body>
