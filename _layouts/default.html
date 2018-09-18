@@ -17,6 +17,7 @@
     </main>
 
     {%- include footer.html -%}
+    <script type="text/javascript" src="/assets/mermaid/7.1.2/mermaid.min.js"></script>
     <script type="text/javascript">
       (function(){
         setTimeout(function(){
@@ -26,6 +27,9 @@
           var siteTitle = document.querySelector('.site-title');
           siteTitle.appendChild(blink);
         }, 1000);
+        
+        // Initial mermaid
+        mermaid.init({startOnLoad:true}, "pre[lang='mermaid'] code");
       })();
     </script>
   </body>
